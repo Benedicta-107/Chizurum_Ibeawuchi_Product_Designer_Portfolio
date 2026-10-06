@@ -29,47 +29,6 @@ Then open `http://localhost:8000`.
 
 You can also open `index.html` directly, but a local server is better for testing relative links consistently.
 
-## Update the existing GitHub Pages repository
-
-If the current portfolio is already published from the `main` branch, you do **not** need a new repository.
-
-1. Download and unzip this updated portfolio.
-2. Open the existing GitHub repository.
-3. Replace the old root files with the new versions:
-   - `index.html`
-   - `case-study.html`
-   - `cases.js`
-   - `styles.css`
-   - `script.js`
-   - `README.md`
-4. Replace the repository's `assets/` folder with this version of `assets/`.
-5. Add `CHANGELOG.md` if you want to keep the project notes in the repo.
-6. Commit the changes to the same branch GitHub Pages already uses (normally `main`).
-7. Wait for the Pages deployment to complete, then hard-refresh the live site.
-
-If uploading through the GitHub website, it is usually easiest to upload the **contents of this folder**, not the ZIP itself.
-
-## Git command option
-
-If you have the repository cloned locally, copy these updated files into the cloned repository, then run:
-
-```bash
-git status
-git add .
-git commit -m "Expand portfolio case studies and add new project work"
-git push origin main
-```
-
-GitHub Pages should redeploy automatically if it is already configured for `main` / root.
-
-## Before making the updated site public
-
-- Ask Chizurum to review all FirstMobile, Zenith, Smart ID, Open Banking, Thrive MFB, Mobile POS, and PearlX images for public-sharing approval.
-- The earlier document marked `Interswitch - INTERNAL` is **not** included in this website.
-- Open Banking is deliberately described as a concept/prototype; no production launch metric is claimed.
-- Product metrics are worded as product-level outcomes, not proof that design alone caused the result.
-- The downloadable CV still contains the contact details present in the supplied CV. Replace `assets/Chizurum-Ibeawuchi-CV.pdf` if a different public CV is preferred.
-
 ## Structure
 
 ```text
