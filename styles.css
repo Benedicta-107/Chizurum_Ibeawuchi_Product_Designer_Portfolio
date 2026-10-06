@@ -103,3 +103,136 @@ img{display:block;max-width:100%}
 }
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+/* =========================================================
+   IMAGE CROPPING FIX
+   Keep complete portfolio artwork visible
+   ========================================================= */
+
+/* Homepage project artwork */
+.project-media img,
+.project-card img,
+.work-card img,
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+/* Hero / featured Zenith artwork */
+.hero-card img,
+.hero-visual img,
+.hero-project img,
+.featured-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+/* Never allow portfolio images to overflow their containers */
+.project-media,
+.project-image,
+.hero-card,
+.hero-visual,
+.hero-project,
+.featured-card {
+  overflow: hidden;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+
+  /* Don't force landscape artwork into a tall portrait crop */
+  .project-media,
+  .project-image {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+  }
+
+  .project-media img,
+  .project-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    object-fit: contain !important;
+    object-position: center !important;
+    display: block;
+  }
+
+}
+
+/* =========================================================
+   FINAL TARGETED IMAGE FIX
+   Zenith hero + PearlX desktop
+   ========================================================= */
+
+
+/* 1. ZENITH LANDING-PAGE / HERO ARTWORK
+   Show the complete artwork instead of cropping it */
+   .art-panel img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  
+    object-fit: contain !important;
+    object-position: center !important;
+  
+    display: block;
+  }
+  
+  
+  /* Keep the Zenith card itself from clipping the artwork */
+  .art-panel {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  
+  
+  /* 2. PEARLX — DESKTOP ONLY
+     Allow the full PearlX artwork to determine its own height */
+  @media (min-width: 769px) {
+  
+    .project.pearlx .project-visual,
+    .project-card.pearlx .project-visual,
+    #pearlx .project-visual {
+      height: auto !important;
+      min-height: 0 !important;
+      overflow: visible !important;
+    }
+  
+    .project.pearlx .project-visual img,
+    .project-card.pearlx .project-visual img,
+    #pearlx .project-visual img {
+      width: 100% !important;
+      height: auto !important;
+      max-width: 100% !important;
+  
+      object-fit: contain !important;
+      object-position: center !important;
+  
+      display: block;
+    }
+  
+  }
+
+  /* Small Zenith hero positioning adjustment */
+.art-panel {
+  transform: translateX(-35px) rotate(-3deg) !important;
+}
+
+/* =========================================================
+   MOBILE ONLY — expose "FORM MEETS FUNCTION"
+   ========================================================= */
+
+   @media (max-width: 700px) {
+    .art-panel {
+      transform: translateX(-55px) rotate(-3deg) !important;
+    }
+  }
